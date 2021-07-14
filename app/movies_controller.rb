@@ -21,7 +21,7 @@ def can_be_created_with_a_hash_of_attributes
       in_theaters: false
   }
   movie = Movie.new(attributes)
-  movie.save
+  movie.save        # Movie.create(attributes) combines line 23 & 24
   movie
 end
 
@@ -71,8 +71,6 @@ def can_be_found_updated_and_saved
   Movie.create(title: "Awesome Flick")
   movie = Movie.find_by(title: "Awesome Flick")
   movie.update(title: "Even Awesomer Flick")
-  movie.save
-  movie
 end
 
 def can_update_using_update_method
